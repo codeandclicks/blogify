@@ -67,6 +67,9 @@
     * [Authentication & Authorization](/blogs/api/auth.md)
     * [API Styles](/blogs/api/styles.md)
     * [API Testing](/blogs/api/Tools.md)
+    * [Postman](/blogs/api/Postman.md)
+    * [Rest Assured](/blogs/api/RestAssured.md)
+    
 
 * Ecommerce
     * [Introduction](/blogs/domian/ecom/Introduction.md)
