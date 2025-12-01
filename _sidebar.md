@@ -67,3 +67,13 @@
     * [Authentication & Authorization](/blogs/api/auth.md)
     * [API Styles](/blogs/api/styles.md)
     * [API Testing](/blogs/api/Tools.md)
+
+* Ecommerce
+    * [Introduction](/blogs/domian/ecom/Introduction.md)
+    * [Retail Domain](/blogs/domian/ecom/Retail.md)
+    * [Inventory Management System](/blogs/domian/ecom/Inventory.md)
+    * [Point of Sale ](/blogs/domian/ecom/POS.md)
+    * [Fleet Management System](/blogs/domian/ecom/Fleet.md)
+    * [Customer Relationship Management](/blogs/domian/ecom/CRM.md)
+    * [Interaction](/blogs/domian/ecom/Interaction.md)
+    

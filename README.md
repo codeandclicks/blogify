@@ -9,6 +9,7 @@ Explore tutorials, tips, and insights to build better software and automate smar
 
 ---
 
+
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
 
 <!-- Column 1: Development -->
@@ -35,13 +36,22 @@ Explore tutorials, tips, and insights to build better software and automate smar
 <p>Explore test strategies, automation frameworks, and quality engineering practices for robust software delivery.</p>
 </div>
 
+
 <!-- Column 3: Automation & DevOps -->
 <div style="flex: 1; min-width: 300px; padding: 10px; border: 1px solid #ddd; border-radius: 8px;">
 <h2>⚙️ Automation & DevOps</h2>
 <ul>
   <li><strong>CI/CD:</strong> Jenkins, GitHub Actions, Azure DevOps</li>
   <li><strong>Containers:</strong> Docker, Kubernetes</li>
-  <li><strong>Cloud:</strong> AWS, Azure</li>
+  <li><strong>Cloud:</strong> AWS, Azure<!-- Docsify core -->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+<!-- Mermaid library -->
+<script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+<!-- Docsify Mermaid plugin -->
+<script src="//cdn.jsdelivr.net/npm/docsify-mermaid/dist/docsify-mermaid.min.js"></script>
+</li>
   <li><strong>RPA:</strong> UIPath</li>
 </ul>
 <p>Automate workflows, streamline deployments, and integrate DevOps tools to accelerate development cycles.</p>
