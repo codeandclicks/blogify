@@ -1,43 +1,871 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Code & Clicks</title>
-    <!-- 🌟 Website Title -->
+    <title>Code & Clicks - Modern Development & Testing Blog</title>
     <meta
       name="description"
-      content="A blog about software development, testing, and automation using Java, Python, C#, Selenium, Playwright, and DevOps tools."
+      content="A modern blog about software development, testing, and automation using Java, Python, C#, Selenium, Playwright, and DevOps tools."
     />
-    <!-- 🌟 Tagline -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"
-    />
+    
+    <!-- Modern Theme - Dark Mode Ready -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+    
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        /* Typography */
+        --base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        --code-font-family: 'Fira Code', 'Cascadia Code', 'SF Mono', Monaco, Consolas, monospace;
+        
+        /* Spacing */
+        --content-max-width: 1200px;
+        --sidebar-width: 300px;
+      }
+
+      /* Dark Theme (Default) */
+      body, body[data-theme="dark"] {
+        --theme-color: #818cf8;
+        --theme-color-dark: #6366f1;
+        --theme-color-light: #a5b4fc;
+        --accent-color: #22d3ee;
+        --text-color: #e2e8f0;
+        --bg-color: #0f172a;
+        --sidebar-bg: #1e293b;
+        --code-bg: #1e293b;
+        --border-color: #334155;
+        --link-color: #818cf8;
+        --heading-color: #a5b4fc;
+        --header-bg-start: #4338ca;
+        --header-bg-end: #312e81;
+        --cover-bg-start: #667eea;
+        --cover-bg-end: #764ba2;
+      }
+
+      /* Light Theme */
+      body[data-theme="light"] {
+        --theme-color: #6366f1;
+        --theme-color-dark: #4f46e5;
+        --theme-color-light: #818cf8;
+        --accent-color: #06b6d4;
+        --text-color: #1e293b;
+        --bg-color: #ffffff;
+        --sidebar-bg: #ffffff;
+        --code-bg: #1e293b;
+        --border-color: #e2e8f0;
+        --link-color: #6366f1;
+        --heading-color: #4f46e5;
+        --header-bg-start: #6366f1;
+        --header-bg-end: #4f46e5;
+        --cover-bg-start: #6366f1;
+        --cover-bg-end: #8b5cf6;
+      }
+
+      /* Light theme sidebar visibility fix */
+      body[data-theme="light"] .sidebar {
+        background: #ffffff;
+        border-right: 2px solid #e2e8f0;
+      }
+
+      body[data-theme="light"] .sidebar-nav a {
+        color: #1e293b !important;
+      }
+
+      body[data-theme="light"] .sidebar-nav strong {
+        color: #0f172a;
+      }
+
+      /* Blue Theme */
+      body[data-theme="blue"] {
+        --theme-color: #3b82f6;
+        --theme-color-dark: #2563eb;
+        --theme-color-light: #60a5fa;
+        --accent-color: #0ea5e9;
+        --text-color: #f1f5f9;
+        --bg-color: #0c4a6e;
+        --sidebar-bg: #075985;
+        --code-bg: #1e3a8a;
+        --border-color: #0369a1;
+        --link-color: #60a5fa;
+        --heading-color: #93c5fd;
+        --header-bg-start: #1e40af;
+        --header-bg-end: #1e3a8a;
+        --cover-bg-start: #0284c7;
+        --cover-bg-end: #0369a1;
+      }
+
+      /* Global Styles */
+      body {
+        font-family: var(--base-font-family);
+        background: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom Page Header */
+      .app-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(135deg, var(--header-bg-start), var(--header-bg-end));
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        z-index: 100;
+        transition: background 0.3s ease;
+      }
+
+      .app-header-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .app-header-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .theme-switcher {
+        display: flex;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 6px;
+        border-radius: 25px;
+      }
+
+      .theme-btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 20px;
+        background: transparent;
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .theme-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .theme-btn.active {
+        background: white;
+        color: var(--theme-color-dark);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .app-header-search {
+        position: relative;
+        width: 300px;
+      }
+
+      .app-header-search input {
+        width: 100%;
+        padding: 10px 40px 10px 15px;
+        border: none;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+      }
+
+      .app-header-search input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .app-header-search input:focus {
+        outline: none;
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+      }
+
+      .app-header-search-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      /* Hide default navbar */
+      nav.app-nav {
+        display: none !important;
+      }
+
+      /* Sidebar Enhancements */
+      .sidebar {
+        top: 60px;
+        background: var(--sidebar-bg);
+        border-right: 1px solid var(--border-color);
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+        padding-top: 0;
+      }
+
+      /* Remove spacing before first node */
+      .sidebar-nav {
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .sidebar-nav > ul {
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      /* Hide sidebar name */
+      .sidebar .app-name {
+        display: none;
+      }
+
+      .sidebar-nav > ul > li > a {
+        font-weight: 600;
+        color: var(--link-color);
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 4px 8px;
+        transition: all 0.2s ease;
+      }
+
+      .sidebar-nav > ul > li > a:hover {
+        background: var(--theme-color);
+        color: white;
+        transform: translateX(4px);
+      }
+
+      .sidebar-nav li.active > a {
+        background: linear-gradient(135deg, var(--theme-color), var(--theme-color-light));
+        color: white;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      }
+
+      /* Light theme sidebar adjustments */
+      body[data-theme="light"] .sidebar-nav a {
+        color: var(--link-color);
+      }
+
+      body[data-theme="light"] .sidebar-nav ul ul a {
+        color: #475569;
+      }
+
+      /* Content Area */
+      .content {
+        padding: 70px 60px 40px 60px;
+        max-width: var(--content-max-width);
+      }
+
+      /* Remove extra whitespace at top of content */
+      .markdown-section {
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      .markdown-section > *:first-child {
+        margin-top: 0;
+      }
+
+      /* Modern Headings */
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: var(--heading-color);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid var(--theme-color);
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: var(--heading-color);
+        margin-top: 2rem;
+        padding-left: 1rem;
+        border-left: 4px solid var(--theme-color);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: var(--heading-color);
+      }
+
+      h4, h5, h6 {
+        color: var(--text-color);
+      }
+
+      /* Light theme heading visibility fix */
+      body[data-theme="light"] h1,
+      body[data-theme="light"] h2,
+      body[data-theme="light"] h3 {
+        color: #1e293b;
+      }
+
+      body[data-theme="light"] h4,
+      body[data-theme="light"] h5,
+      body[data-theme="light"] h6 {
+        color: #334155;
+      }
+
+      /* Light theme text visibility */
+      body[data-theme="light"] p,
+      body[data-theme="light"] li,
+      body[data-theme="light"] td {
+        color: #1e293b;
+      }
+
+      body[data-theme="light"] strong,
+      body[data-theme="light"] b {
+        color: #0f172a;
+        font-weight: 700;
+      }
+
+      /* Code Blocks */
+      pre {
+        background: var(--code-bg) !important;
+        border-radius: 12px;
+        padding: 20px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: var(--code-font-family);
+        font-size: 0.9em;
+        background: rgba(99, 102, 241, 0.1);
+        padding: 2px 6px;
+        border-radius: 4px;
+        color: var(--text-color);
+      }
+
+      pre code {
+        background: transparent;
+        padding: 0;
+        color: #e2e8f0;
+      }
+
+      /* Light theme code adjustments */
+      body[data-theme="light"] code {
+        color: #1e293b;
+        background: rgba(99, 102, 241, 0.1);
+      }
+
+      body[data-theme="light"] pre code {
+        color: #e2e8f0;
+      }
+
+      /* Tables */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 2rem 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      thead {
+        background: linear-gradient(135deg, var(--theme-color), var(--theme-color-dark));
+        color: white;
+      }
+
+      th {
+        padding: 16px;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      tr:hover {
+        background: rgba(99, 102, 241, 0.05);
+      }
+
+      /* Links */
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      a:hover {
+        color: var(--theme-color-light);
+      }
+
+      a:not(.anchor)::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--theme-color);
+        transition: width 0.3s ease;
+      }
+
+      a:not(.anchor):hover::after {
+        width: 100%;
+      }
+
+      /* Blockquotes */
+      blockquote {
+        border-left: 4px solid var(--theme-color);
+        background: rgba(99, 102, 241, 0.05);
+        padding: 16px 20px;
+        margin: 2rem 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      /* Lists */
+      ul, ol {
+        line-height: 1.8;
+      }
+
+      li {
+        margin: 8px 0;
+      }
+
+      /* Badges & Labels */
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.85em;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--theme-color), var(--theme-color-light));
+        color: white;
+        margin: 4px;
+      }
+
+      /* Hide Search Bar in Sidebar */
+      .sidebar .search {
+        display: none !important;
+      }
+
+      /* Collapsed Sidebar Items */
+      .sidebar-nav ul ul {
+        display: none;
+      }
+
+      .sidebar-nav li.open > ul {
+        display: block;
+      }
+
+      /* Cover Page */
+      section.cover {
+        background: linear-gradient(135deg, var(--cover-bg-start) 0%, var(--cover-bg-end) 100%);
+        transition: background 0.3s ease;
+      }
+
+      section.cover h1 {
+        color: white;
+        -webkit-text-fill-color: white;
+        font-size: 4rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      section.cover .cover-main > p:last-child a {
+        background: white;
+        color: var(--theme-color-dark);
+        padding: 16px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      section.cover .cover-main > p:last-child a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Cover page button theme colors */
+      section.cover .cover-btn-primary {
+        background: white !important;
+        color: var(--theme-color-dark) !important;
+      }
+
+      section.cover .cover-btn-primary:hover {
+        background: rgba(255, 255, 255, 0.9) !important;
+      }
+
+      section.cover .cover-btn-secondary {
+        border-color: white !important;
+        color: white !important;
+      }
+
+      section.cover .cover-btn-secondary:hover {
+        background: white !important;
+        color: var(--theme-color-dark) !important;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .content > * {
+        animation: fadeIn 0.5s ease;
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--sidebar-bg);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--theme-color);
+        border-radius: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--theme-color-dark);
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        .app-header {
+          padding: 0 15px;
+        }
+
+        .app-header-title {
+          font-size: 1.2rem;
+        }
+
+        .theme-switcher {
+          display: none;
+        }
+
+        .app-header-search {
+          width: 180px;
+        }
+
+        .content {
+          padding: 80px 24px 20px 24px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        section.cover h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      /* Footer Styles */
+      .app-footer {
+        background: var(--sidebar-bg);
+        border-top: 1px solid var(--border-color);
+        padding: 30px 60px;
+        margin-top: 60px;
+        text-align: center;
+        color: var(--text-color);
+        font-size: 0.9rem;
+      }
+
+      .app-footer-content {
+        max-width: var(--content-max-width);
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .app-footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .app-footer-links a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+
+      .app-footer-links a:hover {
+        color: var(--theme-color-light);
+      }
+
+      .app-footer-copyright {
+        color: var(--text-color);
+        opacity: 0.7;
+      }
+
+      /* Light theme footer */
+      body[data-theme="light"] .app-footer {
+        background: #f8fafc;
+        border-top: 2px solid #e2e8f0;
+      }
+
+      /* Responsive footer */
+      @media screen and (max-width: 768px) {
+        .app-footer {
+          padding: 20px 24px;
+        }
+
+        .app-footer-links {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+
+      /* Print Styles */
+      @media print {
+        .app-header, .app-footer, .sidebar, .sidebar-toggle, .github-corner {
+          display: none;
+        }
+
+        .content {
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <div id="app">Loading...</div>
+  <body data-theme="dark">
+    <!-- Custom Header -->
+    <div class="app-header">
+      <div class="app-header-title">
+        💻 Code & Clicks
+      </div>
+      <div class="app-header-controls">
+        <div class="theme-switcher">
+          <button class="theme-btn active" data-theme="dark">🌙 Dark</button>
+          <button class="theme-btn" data-theme="light">☀️ Light</button>
+          <button class="theme-btn" data-theme="blue">💧 Blue</button>
+        </div>
+        <div class="app-header-search">
+          <input type="search" id="header-search" placeholder="🔍 Search documentation..." />
+          <span class="app-header-search-icon">⌕</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="app">🚀 Loading...</div>
     <script>
       window.$docsify = {
-        name: "Code & Clicks",
-        repo: "",
+        name: '',
+        repo: 'https://github.com/yourusername/blogify',
         loadSidebar: true,
         subMaxLevel: 3,
+        maxLevel: 4,
         alias: {
-          "/.*/_sidebar.md": "/_sidebar.md",
+          '/.*/_sidebar.md': '/_sidebar.md',
         },
-        sidebarCollapse: {
-          accordion: true,
-          collapse: true,
-        },
-        loadNavbar: true,
+        sidebarDisplayLevel: 0,
+        auto2top: true,
+        
+        // Sidebar collapsible - child nodes collapsed by default
+        sidebarCollapsible: true,
+        homepage: 'README.md',
+        loadNavbar: false,
         coverpage: true,
+        onlyCover: false,
+        
+        // Search configuration
+        search: {
+          placeholder: 'Search...',
+          noData: 'No results found',
+          depth: 6,
+        },
+
+        
+        // Pagination
+        pagination: {
+          previousText: '← PREVIOUS',
+          nextText: 'NEXT →',
+          crossChapter: true,
+          crossChapterText: true,
+        },
+        
+        // Copy Code
+        copyCode: {
+          buttonText: '📋 Copy',
+          errorText: '❌ Error',
+          successText: '✅ Copied!'
+        },
+        
+        // Tabs
+        tabs: {
+          persist: true,
+          sync: true,
+          theme: 'material',
+          tabComments: true,
+          tabHeadings: true
+        }
       };
     </script>
 
-    <!-- Docsify core -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-    <script src="https://unpkg.com/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    <!-- Core Docsify -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
     
+    <!-- Plugins -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+    
+    <!-- Custom Search Integration & Theme Switcher -->
+    <script>
+      // Theme Switcher
+      const themeButtons = document.querySelectorAll('.theme-btn');
+      const body = document.body;
+      
+      // Load saved theme or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      body.setAttribute('data-theme', savedTheme);
+      document.querySelector(`.theme-btn[data-theme="${savedTheme}"]`)?.classList.add('active');
+      
+      themeButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const theme = this.getAttribute('data-theme');
+          
+          // Update active button
+          themeButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Apply theme
+          body.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+        });
+      });
+      
+      // Integrate custom header search with Docsify search
+      function initializeSearch() {
+        const headerSearch = document.getElementById('header-search');
+        if (!headerSearch) return;
+        
+        // Wait for Docsify search to be ready
+        const checkSearch = setInterval(function() {
+          const docsifySearch = document.querySelector('.search input[type="search"]');
+          if (docsifySearch) {
+            clearInterval(checkSearch);
+            
+            // Sync header search with Docsify search
+            headerSearch.addEventListener('input', function(e) {
+              docsifySearch.value = e.target.value;
+              const inputEvent = new Event('input', { bubbles: true });
+              docsifySearch.dispatchEvent(inputEvent);
+              
+              // Trigger keyup for better compatibility
+              const keyupEvent = new KeyboardEvent('keyup', { bubbles: true });
+              docsifySearch.dispatchEvent(keyupEvent);
+            });
+            
+            // Show search results when typing in header
+            headerSearch.addEventListener('focus', function() {
+              docsifySearch.focus();
+              setTimeout(() => headerSearch.focus(), 10);
+            });
+            
+            // Sync results back to header
+            docsifySearch.addEventListener('input', function(e) {
+              if (e.target.value !== headerSearch.value) {
+                headerSearch.value = e.target.value;
+              }
+            });
+          }
+        }, 100);
+        
+        // Clear interval after 5 seconds if search not found
+        setTimeout(() => clearInterval(checkSearch), 5000);
+      }
+      
+      // Initialize search when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeSearch);
+      } else {
+        initializeSearch();
+      }
+      
+      // Also initialize after a short delay to ensure Docsify is loaded
+      setTimeout(initializeSearch, 1000);
+    </script>
+    
+    <!-- Syntax Highlighting -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+    
+    <!-- Mermaid for Diagrams -->
+    <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-mermaid@2/dist/docsify-mermaid.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+    
+    <!-- Zoom Image -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    
+    <!-- Emoji Support -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+
+    <!-- Custom Footer -->
+    <script>
+      // Add footer dynamically
+      window.addEventListener('load', function() {
+        const footer = document.createElement('footer');
+        footer.className = 'app-footer';
+        footer.innerHTML = `
+          <div class="app-footer-content">
+            <div class="app-footer-links">
+              <a href="#/">Home</a>
+              <a href="https://github.com/codeandclicks/blogify" target="_blank">GitHub</a>
+              <a href="#/blogs/java/basic/Introduction">Java</a>
+              <a href="#/blogs/javascript/Introduction">JavaScript</a>
+              <a href="#/blogs/api/Introduction">API Testing</a>
+            </div>
+            <div class="app-footer-copyright">
+              © ${new Date().getFullYear()} Code & Clicks. Built with ❤️ using Docsify.
+            </div>
+          </div>
+        `;
+        
+        const main = document.querySelector('main');
+        if (main) {
+          main.appendChild(footer);
+        }
+      });
+    </script>
   </body>
 </html>
