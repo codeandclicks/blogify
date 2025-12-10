@@ -88,16 +88,27 @@
   * **Core Fundamentals**
     * [Introduction](/blogs/javascript/Introduction.md)
     * [Variables & Data Types](/blogs/javascript/VariablesDataTypes.md)
-    * [Operators](/blogs/javascript/Operators.md)
     * [Control Flow](/blogs/javascript/ControlFlow.md)
     * [Functions](/blogs/javascript/Functions.md)
     * [Scope & Hoisting](/blogs/javascript/ScopeAndHoisting.md)
     * [ES6+ Features](/blogs/javascript/ES6Features.md)
   * **Advanced Concepts**
     * [Promises & Async/Await](/blogs/javascript/AsyncAwait.md)
-    * [Error Handling](/blogs/javascript/ErrorHandling.md)
-    * [Classes & OOP](/blogs/javascript/ClassesOOP.md)
-    * [Modules](/blogs/javascript/Modules.md)
+    * [Modules (Import/Export)](/blogs/javascript/Modules.md)
+    * [Error Handling (Try/Catch)](/blogs/javascript/ErrorHandling.md)
+    * [Objects & Classes](/blogs/javascript/ObjectsClasses.md)
+    * [Array & Object Methods](/blogs/javascript/ArrayMethods.md)
+
+  * **Node.js Basics**
+    * [Node.js & NPM Essentials](/blogs/javascript/NodeBasics.md)
+
+  * **Playwright Fundamentals**
+    * [Installation & Setup](/blogs/javascript/PlaywrightSetup.md)
+    * [Launching Browsers](/blogs/javascript/PlaywrightBrowsers.md)
+    * [Selectors](/blogs/javascript/PlaywrightSelectors.md)
+    * [Page Interactions](/blogs/javascript/PlaywrightInteractions.md)
+    * [Assertions](/blogs/javascript/PlaywrightAssertions.md)
+    * [Screenshots & Tracing](/blogs/javascript/PlaywrightDebugging.md)
   * **Node.js Basics**
     * [Running JS with Node](/blogs/javascript/RunWithNode.md)
     * [Understanding Runtime](/blogs/javascript/NodeRuntime.md)
