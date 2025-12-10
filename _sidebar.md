@@ -109,18 +109,6 @@
     * [Page Interactions](/blogs/javascript/PlaywrightInteractions.md)
     * [Assertions](/blogs/javascript/PlaywrightAssertions.md)
     * [Screenshots & Tracing](/blogs/javascript/PlaywrightDebugging.md)
-  * **Node.js Basics**
-    * [Running JS with Node](/blogs/javascript/RunWithNode.md)
-    * [Understanding Runtime](/blogs/javascript/NodeRuntime.md)
-    * [NPM & Package Scripts](/blogs/javascript/NpmPackageScripts.md)
-    * [File I/O for Test Data](/blogs/javascript/FileIO.md)
-  * **Playwright Fundamentals**
-    * [Installation & Setup](/blogs/javascript/PlaywrightSetup.md)
-    * [Launching Browsers](/blogs/javascript/PlaywrightBrowsers.md)
-    * [Selectors](/blogs/javascript/PlaywrightSelectors.md)
-    * [Page Interactions](/blogs/javascript/PlaywrightInteractions.md)
-    * [Assertions](/blogs/javascript/PlaywrightAssertions.md)
-    * [Screenshots & Tracing](/blogs/javascript/PlaywrightDebugging.md)
   * **Playwright Advanced**
     * [Fixtures & Hooks](/blogs/javascript/PlaywrightFixtures.md)
     * [Parallel Execution](/blogs/javascript/PlaywrightParallel.md)
