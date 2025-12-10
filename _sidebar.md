@@ -82,4 +82,62 @@
     * [Fleet Management System](/blogs/domian/ecom/Fleet.md)
     * [Customer Relationship Management](/blogs/domian/ecom/CRM.md)
     * [Interaction](/blogs/domian/ecom/Interaction.md)
+
+* JavaScript for Playwright Automation
+    * Core JavaScript Fundamentals
+      * [Introduction](/blogs/javascript/Introduction.md)
+      * [Variables and Data Types](/blogs/javascript/VariablesDataTypes.md)          
+      * [Operators](/blogs/javascript/Operators.md)         
+      * [Control Flow](/blogs/javascript/ControlFlow.md)
+      * [Functions](/blogs/javascript/Functions.md)
+      * [Scope and Hoisting](/blogs/javascript/ScopeAndHoisting.md)
+      * [ES6+ Features](/blogs/javascript/ES6Features.md)
+
+    * Advanced JavaScript Concepts
+        * [Promises and Async/Await](/blogs/javascript/AsyncAwait.md)
+            * [Understanding Promises](/blogs/javascript/Promises.md)
+            * [Async/Await Syntax](/blogs/javascript/AsyncSyntax.md)
+            * [Error Handling in Async](/blogs/javascript/AsyncErrorHandling.md)
+        * [Error Handling](/blogs/javascript/ErrorHandling.md)
+            * [Try/Catch Blocks](/blogs/javascript/TryCatch.md)
+            * [Throwing Errors](/blogs/javascript/ThrowErrors.md)
+        * [Classes and OOP Basics](/blogs/javascript/ClassesOOP.md)
+            * [Defining Classes](/blogs/javascript/DefiningClasses.md)
+            * [Inheritance](/blogs/javascript/Inheritance.md)
+            * [Methods and Properties](/blogs/javascript/MethodsProperties.md)
+        * [Modules](/blogs/javascript/Modules.md)
+            * [Exporting Functions](/blogs/javascript/ExportFunctions.md)
+            * [Importing Modules](/blogs/javascript/ImportModules.md)
+
+    * Node.js Basics
+        * [Running JavaScript with Node](/blogs/javascript/RunWithNode.md)
+        * [Understanding Runtime](/blogs/javascript/NodeRuntime.md)
+        * [NPM and Package Scripts](/blogs/javascript/NpmPackageScripts.md)
+            * [Installing Packages](/blogs/javascript/InstallingPackages.md)
+            * [Using package.json](/blogs/javascript/PackageJson.md)
+            * [Custom Scripts](/blogs/javascript/CustomScripts.md)
+        * [File I/O for Test Data](/blogs/javascript/FileIO.md)
+            * [Reading Files](/blogs/javascript/ReadFiles.md)
+            * [Writing Files](/blogs/javascript/WriteFiles.md)
+
+    * Playwright Fundamentals
+        * [Installation and Setup](/blogs/javascript/PlaywrightSetup.md)
+        * [Launching Browsers](/blogs/javascript/PlaywrightBrowsers.md)
+        * [Selectors](/blogs/javascript/PlaywrightSelectors.md)
+        * [Page Interactions](/blogs/javascript/PlaywrightInteractions.md)
+        * [Assertions](/blogs/javascript/PlaywrightAssertions.md)
+        * [Screenshots and Tracing](/blogs/javascript/PlaywrightDebugging.md)
+
+    * Playwright Advanced Usage
+        * [Fixtures and Hooks](/blogs/javascript/PlaywrightFixtures.md)
+        * [Parallel Execution](/blogs/javascript/PlaywrightParallel.md)
+        * [API Testing](/blogs/javascript/PlaywrightAPI.md)
+        * [Data-driven Testing](/blogs/javascript/PlaywrightDataDriven.md)
+        * [CI/CD Integration](/blogs/javascript/PlaywrightCICD.md)
+
+    * Practice & Projects
+        * [Automate a Login Flow](/blogs/javascript/LoginFlow.md)
+        * [E2E Checkout Flow](/blogs/javascript/CheckoutFlow.md)
+        * [API + UI Hybrid Test](/blogs/javascript/HybridTest.md)
+        * [Reusable Test Utilities](/blogs/javascript/TestUtilities.md)
     
