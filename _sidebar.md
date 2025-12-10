@@ -115,9 +115,5 @@
     * [API Testing](/blogs/javascript/PlaywrightAPI.md)
     * [Data-driven Testing](/blogs/javascript/PlaywrightDataDriven.md)
     * [CI/CD Integration](/blogs/javascript/PlaywrightCICD.md)
-  * **Practice & Projects**
-    * [Automate Login Flow](/blogs/javascript/LoginFlow.md)
-    * [E2E Checkout Flow](/blogs/javascript/CheckoutFlow.md)
-    * [API + UI Hybrid Test](/blogs/javascript/HybridTest.md)
-    * [Reusable Test Utilities](/blogs/javascript/TestUtilities.md)
+
     
