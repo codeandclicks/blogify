@@ -42,7 +42,8 @@
 
 * **Devops**
   * [Playwright Github CI CDs](/blogs/devops/githubci.md)
-  * [Playwright Github CI CDs](/blogs/devsops/githubcicd.md)
+  * [Playwright Jenkins CI CDs](/blogs/devops/jenkins.md)
+  * [Playwright Azure CI CDs](/blogs/devops/azureci.md)
 
 * **Automation Testing**
   * **Selenium**
