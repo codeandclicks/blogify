@@ -40,6 +40,10 @@
   * [Playwright Question Set](/blogs/interview/playwright-question.md)
   * [Playwright STAR Stories](/blogs/interview/playwright-star.md)
 
+* **Devops**
+  * [Playwright Github CI CDs](/blogs/devops/githubci.md)
+  * [Playwright Github CI CDs](/blogs/devsops/githubcicd.md)
+
 * **Automation Testing**
   * **Selenium**
     * [Introduction](/blogs/auto/selenium/Introduction.md)
