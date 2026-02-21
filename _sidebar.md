@@ -33,7 +33,10 @@
     * [Liskov Substitution](/blogs/java/oops/LiskovSubstitution.md)
     * [Interface Segregation](/blogs/java/oops/InterfaceSegregation.md)
     * [Dependency Inversion](/blogs/java/oops/DependencyInversion.md)
+     
 
+* **Interview Preparation**
+  * [Playwright Interview Q&A](/blogs/interview/playwright.md)
 * **Automation Testing**
   * **Selenium**
     * [Introduction](/blogs/auto/selenium/Introduction.md)

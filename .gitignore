@@ -1,0 +1,40 @@
+# Docsify build and local files
+/node_modules/
+/.cache/
+/dist/
+/.DS_Store
+*.log
+
+# VS Code
+.vscode/
+
+# OS/Editor
+Thumbs.db
+*.swp
+*.swo
+
+# Docsify serve
+_site/
+
+# Ignore local config
+.env
+
+# Ignore coverage and test
+coverage/
+
+# Ignore build artifacts
+build/
+
+# Ignore temp
+*.tmp
+*.bak
+
+# Ignore Python, if any
+__pycache__/
+*.pyc
+
+# Ignore Jupyter, if any
+*.ipynb_checkpoints
+
+# Ignore personal files
+*.personal
