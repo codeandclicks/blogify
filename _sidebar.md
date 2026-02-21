@@ -39,6 +39,7 @@
   * [Playwright Interview Q&A](/blogs/interview/playwright.md)
   * [Playwright Interview mock](/blogs/interview/playwright-mock-interview.md)
   * [Playwright Interview set](/blogs/interview/playwright-question.md)
+  * [Playwright Interview STAR](/blogs/interview/playwright-star.md)
 * **Automation Testing**
   * **Selenium**
     * [Introduction](/blogs/auto/selenium/Introduction.md)
