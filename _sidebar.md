@@ -1,7 +1,7 @@
 * **Java Tutorials**
   * **Basic**
     * [Introduction](/blogs/java/basic/Introduction.md)
-    * [Variables and Data Types](/blogs/java/basic/VariablesAndDataTypes.md)
+    * [Variables & Data Types](/blogs/java/basic/VariablesAndDataTypes.md)
     * [Operators](/blogs/java/basic/Operators.md)
     * [Control Flow](/blogs/java/basic/ControlFlow.md)
     * [Arrays](/blogs/java/basic/Arrays.md)
@@ -15,7 +15,7 @@
     * [Threads](/blogs/java/basic/Threads.md)
   * **Object-Oriented Programming**
     * [Overview](/blogs/java/oops/oops.md)
-    * [Classes and Objects](/blogs/java/oops/ClassesAndObjects.md)
+    * [Classes & Objects](/blogs/java/oops/ClassesAndObjects.md)
     * [Constructors](/blogs/java/oops/Constructors.md)
     * [Encapsulation](/blogs/java/oops/Encapsulation.md)
     * [Inheritance](/blogs/java/oops/Inheritance.md)
@@ -33,24 +33,24 @@
     * [Liskov Substitution](/blogs/java/oops/LiskovSubstitution.md)
     * [Interface Segregation](/blogs/java/oops/InterfaceSegregation.md)
     * [Dependency Inversion](/blogs/java/oops/DependencyInversion.md)
-     
 
 * **Interview Preparation**
   * [Playwright Interview Q&A](/blogs/interview/playwright.md)
-  * [Playwright Interview mock](/blogs/interview/playwright-mock-interview.md)
-  * [Playwright Interview set](/blogs/interview/playwright-question.md)
-  * [Playwright Interview STAR](/blogs/interview/playwright-star.md)
+  * [Playwright Mock Interview](/blogs/interview/playwright-mock-interview.md)
+  * [Playwright Question Set](/blogs/interview/playwright-question.md)
+  * [Playwright STAR Stories](/blogs/interview/playwright-star.md)
+
 * **Automation Testing**
   * **Selenium**
     * [Introduction](/blogs/auto/selenium/Introduction.md)
     * [Core Terminologies](/blogs/auto/selenium/CoreTerminologies.md)
-    * [Selenium WebDriver](/blogs/auto/selenium/WebDriver.md)
-    * [Selenium RemoteWebDriver](/blogs/auto/selenium/RemoteWebDriver.md)
+    * [WebDriver](/blogs/auto/selenium/WebDriver.md)
+    * [RemoteWebDriver](/blogs/auto/selenium/RemoteWebDriver.md)
     * [Locators](/blogs/auto/selenium/locators.md)
     * [WebElement](/blogs/auto/selenium/WebElement.md)
     * [Browser Navigation](/blogs/auto/selenium/Navigation.md)
-    * [TimeOut & Waiting Strategies](/blogs/auto/selenium/Wait.md)
-    * [Interaction & Action API](/blogs/auto/selenium/Actions.md)
+    * [Timeout & Waiting](/blogs/auto/selenium/Wait.md)
+    * [Interaction & Actions](/blogs/auto/selenium/Actions.md)
     * [Utility Classes](/blogs/auto/selenium/UtilityClasses.md)
   * **TestNG**
     * [Introduction](/blogs/auto/TestNG/Introduction.md)
@@ -104,10 +104,8 @@
     * [Error Handling (Try/Catch)](/blogs/javascript/ErrorHandling.md)
     * [Objects & Classes](/blogs/javascript/ObjectsClasses.md)
     * [Array & Object Methods](/blogs/javascript/ArrayMethods.md)
-
   * **Node.js Basics**
     * [Node.js & NPM Essentials](/blogs/javascript/NodeBasics.md)
-
   * **Playwright Fundamentals**
     * [Installation & Setup](/blogs/javascript/PlaywrightSetup.md)
     * [Launching Browsers](/blogs/javascript/PlaywrightBrowsers.md)
@@ -122,4 +120,4 @@
     * [Data-driven Testing](/blogs/javascript/PlaywrightDataDriven.md)
     * [CI/CD Integration](/blogs/javascript/PlaywrightCICD.md)
 
-    
+
